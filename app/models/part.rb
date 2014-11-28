@@ -13,4 +13,5 @@
 class Part < ActiveRecord::Base
   belongs_to :story
   has_one :media, dependent: :destroy
+  acts_as_taggable
 end
