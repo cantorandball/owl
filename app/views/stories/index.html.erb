@@ -1,1 +1,7 @@
 <h1>My stories</h1>
+
+<ul>
+  <% @stories.each do |story| %>
+    <li><%= story.name %></li>
+  <% end %>
+</ul>
