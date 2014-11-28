@@ -11,8 +11,8 @@
 </head>
 
 <body>
-  <header>
-    <div class='brand'>Owl</div>
+  <header class='header'>
+    <div class='header-brand'>Owl</div>
 
     <% if user_signed_in? %>
       <nav class='header-site-nav'>
@@ -25,7 +25,7 @@
         <ul>
           <li>
             <%= form_tag destroy_user_session_path, method: :delete do %>
-              <%= button_tag 'Log out' %>
+              <%= button_tag 'Log out', class: 'button' %>
             <% end %>
           </li>
         </ul>
@@ -33,7 +33,9 @@
     <% end %>
   </header>
 
-  <%= yield %>
+  <div class='container'>
+    <%= yield %>
+  </div>
 
   <footer>
   </footer>

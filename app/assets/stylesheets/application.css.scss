@@ -1,4 +1,9 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,700);
 @import 'normalize';
 @import 'shared/config';
+@import 'shared/mixins';
 @import 'shared/core';
+
+@import 'components/header';
+@import 'components/playback';
+@import 'components/recorder';

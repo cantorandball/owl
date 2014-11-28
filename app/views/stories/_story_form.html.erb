@@ -1,9 +1,13 @@
 <%= form_for story do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
 
-  <%= f.label :description %>
-  <%= f.text_area :description %>
+  <div>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
 
   <%= f.button %>
 <% end %>

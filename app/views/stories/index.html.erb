@@ -1,9 +1,11 @@
-<h1>My stories</h1>
+<section>
+  <h1>My stories</h1>
 
-<ul>
-  <% @stories.each do |story| %>
-    <li><%= link_to story.name, story_path(story) %></li>
-  <% end %>
-</ul>
+  <ul>
+    <% @stories.each do |story| %>
+      <li><%= link_to story.name, story_path(story) %></li>
+    <% end %>
+  </ul>
 
-<%= link_to 'Start a new story', new_story_path %>
+  <%= link_to 'Start a new story', new_story_path, class: 'button' %>
+</section>
