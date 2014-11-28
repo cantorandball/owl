@@ -11,10 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141128123427) do
+ActiveRecord::Schema.define(version: 20141128154219) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "media", force: true do |t|
+    t.integer  "part_id"
+    t.string   "type",       null: false
+    t.string   "url"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "media", ["part_id"], name: "index_media_on_part_id", unique: true, using: :btree
+
+  create_table "parts", force: true do |t|
+    t.integer  "story_id",    null: false
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "parts", ["story_id"], name: "index_parts_on_story_id", using: :btree
 
   create_table "stories", force: true do |t|
     t.integer  "owner_id",    null: false

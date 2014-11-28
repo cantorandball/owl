@@ -1,0 +1,2 @@
+class VideoMedia < Media
+end
