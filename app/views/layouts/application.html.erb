@@ -11,9 +11,32 @@
 </head>
 
 <body>
+  <header>
+    <div class='brand'>Owl</div>
 
-<%= yield %>
+    <% if user_signed_in? %>
+      <nav class='header-site-nav'>
+        <ul>
+          <li><%= link_to 'My stories', stories_path %></li>
+        </ul>
+      </nav>
 
+      <nav class='header-user-nav'>
+        <ul>
+          <li>
+            <%= form_tag destroy_user_session_path, method: :delete do %>
+              <%= button_tag 'Log out' %>
+            <% end %>
+          </li>
+        </ul>
+      </nav>
+    <% end %>
+  </header>
+
+  <%= yield %>
+
+  <footer>
+  </footer>
 </body>
 
 </html>
