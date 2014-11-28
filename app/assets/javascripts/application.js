@@ -11,4 +11,6 @@
 // about supported directives.
 //
 //= require jquery
+//= require RecordRTC
+//= require wildemitter-bare
 //= require_tree .
