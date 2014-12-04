@@ -53,6 +53,19 @@ $(function() {
     align: 'left'
   });
 
+  $('.js-shapeshift').on('ss-rearranged', function() {
+    var xhr = $.ajax({
+      url: '/stories/' + storyID + '/arrange_parts',
+      type: 'POST',
+      data: {
+        authenticity_token: $('meta[name="csrf-token"]').attr('content'),
+        parts: $(this).children().toArray().map(function(part) {
+          return $(part).attr('data-part-id');
+        })
+      }
+    });
+  });
+
   Owl.uploader.on('upload', function(jobURL) {
     console.log('job uploaded', jobURL);
 

@@ -34,6 +34,14 @@ class StoriesController < ApplicationController
     render action: :edit
   end
 
+  def arrange_parts
+    params[:parts].each_with_index do |part_id, index|
+      Part.find(part_id).update_attribute(:position, index)
+    end
+
+    render json: { success: true }
+  end
+
   private
 
   def find_story
