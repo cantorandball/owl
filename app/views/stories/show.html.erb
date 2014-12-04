@@ -5,9 +5,9 @@
 
 <div class='story-parts'>
   <ul>
-    <% @story.parts.each do |part| %>
-      <li><%= render_part part %></li>
-    <% end %>
+    <%- @story.parts.each do |part| -%><li>
+      <%= render_part part %>
+    </li><%- end -%>
   </ul>
 </div>
 

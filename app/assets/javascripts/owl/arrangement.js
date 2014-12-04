@@ -55,8 +55,9 @@ $(function() {
       url: '/stories/' + storyID + '/parts',
       type: 'POST',
       data: {
+        authenticity_token: $('meta[name="csrf-token"]').attr('content'),
         part: {
-          media: {
+          media_attributes: {
             type: 'VideoMedia',
             url: jobURL
           }
@@ -65,7 +66,7 @@ $(function() {
     });
 
     xhr.done(function(data) {
-      console.log('success', data);
+      window.location.reload(true);
     });
 
     xhr.fail(function(err) {

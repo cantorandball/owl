@@ -20,7 +20,7 @@ class Media < ActiveRecord::Base
   end
 
   def media_url
-    if attachment
+    if attachment.try(:url)
       return attachment.url
     end
 

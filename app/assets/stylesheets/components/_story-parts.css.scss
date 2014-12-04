@@ -1,10 +1,9 @@
-.story-parts {
-  @include clearfix;
-}
+.story-parts {}
 
 .story-parts li {
   list-style-type: none;
-  float: left;
+  display: inline-block;
+  vertical-align: top;
   width: calc(33% - 2.5rem);
   margin: 2.5rem 2.5rem 2.5rem 0;
 }
