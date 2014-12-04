@@ -5,3 +5,26 @@
     clear: both;
   }
 }
+
+@mixin modal {
+  position: fixed;
+  display: none;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: transparentize($color-grey, 0.6);
+  text-align: center;
+
+  > div {
+    display: inline-block;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: auto;
+    padding: 1.25rem;
+    border-radius: 0.5rem;
+    background-color: $color-white;
+    text-align: left;
+  }
+}

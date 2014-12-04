@@ -1,3 +1,52 @@
 <h1><%= @story.name %></h1>
 <p><%= @story.description %></p>
 <p><%= link_to 'Edit', edit_story_path(@story), class: 'button' %></p>
+<p><button class='js-new-part'>Add a new part</button></p>
+
+<div class='new-part-selection'>
+  <div>
+    <ul class='js-new-part-buttons'>
+      <li><button class='js-new-part-video-button'>Video</button></li>
+      <li><button class='js-new-part-audio-button'>Audio</button></li>
+      <li><button class='js-new-part-image-button'>Picture</button></li>
+      <li><button class='js-new-part-text-button'>Text</button></li>
+    </ul>
+
+    <div class='new-part-video js-new-part-video'>
+      <section class='recorder visible'>
+        <h1>Record a video part</h1>
+        <div class='recorder-controls'>
+          <button class='recorder-controls-button js-record-video'>
+            <i class='icon-videocam'></i>
+          </button>
+          <button class='playback-controls-button playback-controls-button-cancel js-cancel-video'>
+            <i class='icon-cancel'></i>
+          </button>
+        </div>
+      </section>
+
+      <section class='playback'>
+        <h1>Your video</h1>
+        <video controls></video>
+        <audio></audio>
+        <div class='playback-controls'>
+          <button class='playback-controls-button playback-controls-button-upload js-upload-video'>
+            <i class='icon-upload-cloud'></i>
+          </button>
+          <button class='playback-controls-button playback-controls-button-cancel js-cancel-video'>
+            <i class='icon-cancel'></i>
+          </button>
+        </div>
+      </section>
+
+      <section class='uploading'>
+        <h1>Uploading…</h1>
+      </section>
+
+      <section class='uploaded'>
+        <h1>Thanks!</h1>
+        <p>Your part has been added to <%= @story.name %>.</p>
+      </section>
+    </div>
+  </div>
+</div>

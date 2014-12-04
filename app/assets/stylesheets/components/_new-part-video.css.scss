@@ -1,0 +1,12 @@
+.new-part-video {
+  min-width: 37.5rem;
+  text-align: center;
+}
+
+.new-part-video > section {
+  display: none;
+}
+
+.new-part-video > .visible {
+  display: block;
+}

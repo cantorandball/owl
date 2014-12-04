@@ -1,0 +1,13 @@
+.new-part-selection {
+  @include modal;
+}
+
+.new-part-selection li {
+  float: left;
+  margin: 0 1rem;
+  list-style-type: none;
+}
+
+.new-part-video {
+  display: none;
+}
