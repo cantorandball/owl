@@ -20,3 +20,13 @@
 .story-header-description {
   clear: both;
 }
+
+.publish-story {
+  color: $color-green;
+  border-color: $color-green;
+
+  &:hover {
+    color: $color-white;
+    background-color: $color-green;
+  }
+}
