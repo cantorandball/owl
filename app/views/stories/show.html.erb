@@ -3,6 +3,14 @@
 <p><%= link_to 'Edit', edit_story_path(@story), class: 'button' %></p>
 <p><button class='js-new-part'>Add a new part</button></p>
 
+<div class='story-parts'>
+  <ul>
+    <% @story.parts.each do |part| %>
+      <li><%= render_part part %></li>
+    <% end %>
+  </ul>
+</div>
+
 <div class='new-part-selection' data-story-id='<%= @story.id %>'>
   <div>
     <ul class='js-new-part-buttons'>
@@ -19,7 +27,20 @@
           <button class='recorder-controls-button js-record-video'>
             <i class='icon-videocam'></i>
           </button>
+
+          <p>Or <a class='js-upload-video-link' href='#'>upload video from computer</a></p>
         </div>
+      </section>
+
+      <section class='upload-local'>
+        <h1>Upload video</h1>
+        <%= form_for [@story, @new_part] do |f| %>
+          <%= f.fields_for :media, @new_part.build_media do |m| %>
+            <%= m.file_field :attachment %>
+            <%= m.hidden_field :type, value: 'VideoMedia' %>
+          <% end %>
+          <%= f.button 'Upload' %>
+        <% end %>
       </section>
 
       <section class='playback'>

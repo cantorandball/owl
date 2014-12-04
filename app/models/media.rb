@@ -14,4 +14,16 @@
 
 class Media < ActiveRecord::Base
   belongs_to :part
+
+  def media_type
+    self.class.name.sub(/Media$/, '').underscore
+  end
+
+  def media_url
+    if attachment
+      return attachment.url
+    end
+
+    url
+  end
 end
