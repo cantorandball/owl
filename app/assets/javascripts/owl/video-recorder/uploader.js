@@ -5,8 +5,8 @@ Owl.uploader = (function($) {
 
   $.extend(module, new WildEmitter());
 
-  function onUploadMedia() {
-    module.emit('upload');
+  function onUploadMedia(data) {
+    module.emit('upload', data);
   }
 
   function onUploadMediaError(xhr, errorText, error) {

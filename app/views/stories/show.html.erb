@@ -3,7 +3,7 @@
 <p><%= link_to 'Edit', edit_story_path(@story), class: 'button' %></p>
 <p><button class='js-new-part'>Add a new part</button></p>
 
-<div class='new-part-selection'>
+<div class='new-part-selection' data-story-id='<%= @story.id %>'>
   <div>
     <ul class='js-new-part-buttons'>
       <li><button class='js-new-part-video-button'>Video</button></li>
