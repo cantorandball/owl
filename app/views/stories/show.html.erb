@@ -27,6 +27,13 @@
       </section>
     </div>
 
+    <div class='new-part-text js-new-part-text'>
+      <section>
+        <h1>Add text</h1>
+        <%= render partial: 'attachment_form', locals: { story: @story, part: @new_part, type: 'TextMedia' } %>
+      </section>
+    </div>
+
     <div class='new-part-video js-new-part-video'>
       <section class='recorder visible'>
         <h1>Record a video part</h1>

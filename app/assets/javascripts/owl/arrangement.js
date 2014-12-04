@@ -6,6 +6,8 @@ $(function() {
       $newPartVideo             = $('.js-new-part-video'),
       $newPartImageButton       = $('.js-new-part-image-button'),
       $newPartImage             = $('.js-new-part-image'),
+      $newPartTextButton        = $('.js-new-part-text-button'),
+      $newPartText              = $('.js-new-part-text'),
       storyID                   = $newPartSelection.data('story-id');
 
   $newPartSelectionLauncher.on('click', function() {
@@ -30,6 +32,11 @@ $(function() {
   $newPartImageButton.on('click', function() {
     $newPartButtons.hide();
     $newPartImage.show();
+  });
+
+  $newPartTextButton.on('click', function() {
+    $newPartButtons.hide();
+    $newPartText.show();
   });
 
   $('.js-upload-video-link').on('click', function(event) {

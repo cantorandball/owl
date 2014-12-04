@@ -1,7 +1,11 @@
 <%= form_for [story, part] do |f| %>
   <%= f.fields_for :media, part.build_media do |m| %>
-    <%= m.file_field :attachment %>
+    <% if type =~ /Text/ %>
+      <%= m.text_area :content %>
+    <% else %>
+      <%= m.file_field :attachment %>
+    <% end %>
     <%= m.hidden_field :type, value: type %>
   <% end %>
-  <%= f.button 'Upload' %>
+  <%= f.button 'Add' %>
 <% end %>

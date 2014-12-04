@@ -20,6 +20,6 @@ class PartsController < ApplicationController
   private
 
   def part_params
-    params.require(:part).permit(media_attributes: [:attachment, :type, :url])
+    params.require(:part).permit(media_attributes: [:attachment, :content, :type, :url])
   end
 end

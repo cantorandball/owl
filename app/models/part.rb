@@ -21,6 +21,10 @@ class Part < ActiveRecord::Base
 
   before_create :set_position
 
+  def media_content
+    media.content
+  end
+
   private
 
   def set_position
