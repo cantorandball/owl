@@ -1,0 +1,14 @@
+.story-parts {
+  @include clearfix;
+}
+
+.story-parts li {
+  list-style-type: none;
+  float: left;
+  width: calc(33% - 2.5rem);
+  margin: 2.5rem 2.5rem 2.5rem 0;
+}
+
+.story-parts video {
+  width: 100%;
+}
