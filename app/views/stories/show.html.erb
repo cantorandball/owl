@@ -20,6 +20,13 @@
       <li><button class='js-new-part-text-button'>Text</button></li>
     </ul>
 
+    <div class='new-part-image js-new-part-image'>
+      <section>
+        <h1>Upload picture</h1>
+        <%= render partial: 'attachment_form', locals: { story: @story, part: @new_part, type: 'ImageMedia' } %>
+      </section>
+    </div>
+
     <div class='new-part-video js-new-part-video'>
       <section class='recorder visible'>
         <h1>Record a video part</h1>
@@ -34,13 +41,7 @@
 
       <section class='upload-local'>
         <h1>Upload video</h1>
-        <%= form_for [@story, @new_part] do |f| %>
-          <%= f.fields_for :media, @new_part.build_media do |m| %>
-            <%= m.file_field :attachment %>
-            <%= m.hidden_field :type, value: 'VideoMedia' %>
-          <% end %>
-          <%= f.button 'Upload' %>
-        <% end %>
+        <%= render partial: 'attachment_form', locals: { story: @story, part: @new_part, type: 'VideoMedia' } %>
       </section>
 
       <section class='playback'>

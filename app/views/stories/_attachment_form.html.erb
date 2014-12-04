@@ -1,0 +1,7 @@
+<%= form_for [story, part] do |f| %>
+  <%= f.fields_for :media, part.build_media do |m| %>
+    <%= m.file_field :attachment %>
+    <%= m.hidden_field :type, value: type %>
+  <% end %>
+  <%= f.button 'Upload' %>
+<% end %>

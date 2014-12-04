@@ -8,6 +8,7 @@
 #  description :text
 #  created_at  :datetime
 #  updated_at  :datetime
+#  position    :integer          default(0), not null
 #
 
 class Part < ActiveRecord::Base
@@ -17,4 +18,12 @@ class Part < ActiveRecord::Base
   acts_as_taggable
 
   delegate :media_type, :media_url, to: :media
+
+  before_create :set_position
+
+  private
+
+  def set_position
+    self.position = (story.parts.maximum(:position) || 0) + 1
+  end
 end
