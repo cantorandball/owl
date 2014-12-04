@@ -10,33 +10,34 @@ $(function() {
       $newPartText              = $('.js-new-part-text'),
       storyID                   = $newPartSelection.data('story-id');
 
-  $newPartSelectionLauncher.on('click', function() {
-    $newPartVideo.hide();
-    $newPartButtons.show();
-    $newPartSelection.show();
-  });
-
   $newPartSelection.on('click', function(event) {
     if (!$(event.target).closest('.new-part-selection > div').length) {
       $newPartSelection.hide();
     }
   });
 
+  function hideParts() {
+    $('div[class^="new-part-"],div[class*=" new-part-"]').hide();
+  }
+
   $newPartVideoButton.on('click', function() {
     $newPartVideo.find('section').removeClass('visible');
     $newPartVideo.find('.recorder').addClass('visible');
-    $newPartButtons.hide();
+    hideParts();
     $newPartVideo.show();
+    $newPartSelection.show();
   });
 
   $newPartImageButton.on('click', function() {
-    $newPartButtons.hide();
+    hideParts();
     $newPartImage.show();
+    $newPartSelection.show();
   });
 
   $newPartTextButton.on('click', function() {
-    $newPartButtons.hide();
+    hideParts();
     $newPartText.show();
+    $newPartSelection.show();
   });
 
   $('.js-upload-video-link').on('click', function(event) {

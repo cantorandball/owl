@@ -1,25 +1,25 @@
-<h1><%= @story.name %></h1>
-<p><%= @story.description %></p>
-<p><%= link_to 'Edit', edit_story_path(@story), class: 'button' %></p>
-<p><button class='js-new-part'>Add a new part</button></p>
+<div class='story-header'>
+  <h1 class='story-header-title'>
+    <%= @story.name %> <small><%= link_to 'Edit', edit_story_path(@story) %></small>
+  </h1>
+  <ul class='js-new-part-buttons story-header-nav'>
+    <li><button class='js-new-part-video-button'>Add video</button></li>
+    <li><button class='js-new-part-image-button'>Add picture</button></li>
+    <li><button class='js-new-part-text-button'>Add text</button></li>
+  </ul>
+  <p class='story-header-description'><%= @story.description %></p>
+</div>
 
 <div class='story-parts'>
   <ul>
     <%- @story.parts.each do |part| -%><li>
-      <%= render_part part %>
-    </li><%- end -%>
-  </ul>
+        <%= render_part part %>
+      </li><%- end -%>
+</ul>
 </div>
 
 <div class='new-part-selection' data-story-id='<%= @story.id %>'>
   <div>
-    <ul class='js-new-part-buttons'>
-      <li><button class='js-new-part-video-button'>Video</button></li>
-      <li><button class='js-new-part-audio-button'>Audio</button></li>
-      <li><button class='js-new-part-image-button'>Picture</button></li>
-      <li><button class='js-new-part-text-button'>Text</button></li>
-    </ul>
-
     <div class='new-part-image js-new-part-image'>
       <section>
         <h1>Upload picture</h1>

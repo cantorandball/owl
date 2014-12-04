@@ -1,0 +1,22 @@
+.story-header {
+  @include clearfix;
+}
+
+.story-header-title {
+  float: left;
+  margin-top: 0;
+}
+
+.story-header-nav {
+  float: right;
+}
+
+.story-header-nav li {
+  list-style-type: none;
+  float: left;
+  margin-left: 1rem;
+}
+
+.story-header-description {
+  clear: both;
+}
