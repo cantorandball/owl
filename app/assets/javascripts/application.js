@@ -11,6 +11,9 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-ui/draggable
+//= require jquery-ui/droppable
+//= require jquery.shapeshift
 //= require RecordRTC
 //= require wildemitter-bare
 //= require_tree .

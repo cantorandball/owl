@@ -46,6 +46,12 @@ $(function() {
     $newPartVideo.find('.upload-local').addClass('visible');
   });
 
+  $('.js-shapeshift').shapeshift({
+    minColumns: 2,
+    gutterX: 20,
+    gutterY: 20,
+    align: 'left'
+  });
 
   Owl.uploader.on('upload', function(jobURL) {
     console.log('job uploaded', jobURL);
