@@ -25,6 +25,12 @@ $(function() {
     $newPartVideo.show();
   });
 
+  $('.js-upload-video-link').on('click', function(event) {
+    event.preventDefault();
+    $newPartVideo.find('.recorder').removeClass('visible');
+    $newPartVideo.find('.upload-local').addClass('visible');
+  });
+
 
   Owl.uploader.on('upload', function(jobURL) {
     console.log('job uploaded', jobURL);

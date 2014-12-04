@@ -9,7 +9,9 @@
 #  content    :text
 #  created_at :datetime
 #  updated_at :datetime
+#  attachment :string(255)
 #
 
 class VideoMedia < Media
+  mount_uploader :attachment, VideoUploader
 end

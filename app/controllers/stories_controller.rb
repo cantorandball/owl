@@ -1,11 +1,11 @@
 class StoriesController < ApplicationController
-  before_filter :find_story, only: [:show, :edit, :update]
-
   def index
     @stories = current_user.stories.order(updated_at: :desc)
   end
 
   def show
+    @story    = Story.includes(parts: :media).find(params[:id])
+    @new_part = Part.new(story: @story)
   end
 
   def new
@@ -22,9 +22,11 @@ class StoriesController < ApplicationController
   end
 
   def edit
+    @story = find_story
   end
 
   def update
+    @story = find_story
     @story.update_attributes!(story_params)
     redirect_to story_path(@story), notice: 'Story saved.'
 
@@ -34,8 +36,8 @@ class StoriesController < ApplicationController
 
   private
 
-  def find_story
-    @story = Story.find(params[:id])
+  def story
+    Story.find(params[:id])
   end
 
   def story_params
